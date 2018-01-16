@@ -1,0 +1,50 @@
+page-single {
+    .product-detail {
+        height: 55%;
+        position: relative; //    border-bottom: 1.5px solid #e4e4e4;
+        .slide-zoom {
+            height: 100%;
+            img {
+                width: 100%;
+            }
+        }
+        .action-btn-wrap {
+            position: absolute;
+            bottom: -22px;
+            z-index: 1000;
+            right: 2px;
+        }
+        .wish-list-btn,
+        .share-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        .qty{
+             padding-top: 13px;
+        }
+    }
+    ion-footer.single-footer {
+        height: 55px;
+        ion-grid {
+            height: 55px;
+            padding: 0;
+            ion-row {
+                padding: 0;
+                .addCart{
+                      button{
+                         height: 55px;  
+                      }   
+               }
+                ion-col {
+                    padding: 0;
+                    // height: 40px;
+
+                    
+                }
+            
+            }
+        }
+    }
+}

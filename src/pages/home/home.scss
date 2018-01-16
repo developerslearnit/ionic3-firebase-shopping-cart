@@ -1,3 +1,37 @@
 page-home {
+  
+    ion-content {
+        
+        .scroll-content,
+        fixed-content {
+            
+            background: color($colors,contentbg);
+            ion-slides{
+                height: 35%;
+                .slide-zoom{
+                    height: 100%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+               }
+            }
+       
+            .grid{
 
+                .col{
+                    padding:1px;
+                    ion-card{                        
+                        border-radius: 0;
+                        width: 100%;
+                        margin: 1px;
+                        ion-card-content{
+                            padding: 1px 13px;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
 }

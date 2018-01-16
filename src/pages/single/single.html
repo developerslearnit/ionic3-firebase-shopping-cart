@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{selectProduct?.name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="card product-detail">
+    <ion-slides pager=true slidesPerView=1>
+      <ion-slide>
+        <img src="{{selectProduct?.thumb}}" alt="">
+      </ion-slide>
+      <ion-slide *ngFor="let prodImg of selectProduct?.images">
+        <img src="{{prodImg}}" alt="">
+      </ion-slide>
+    </ion-slides>
+
+    <ion-row class="action-btn-wrap" no-padding>
+      <ion-col text-right>
+        <button ion-button icon-only class="wish-list-btn card" (click)="toggleWishList(item)" color="light">
+          <ion-icon name="md-heart" color="gray"></ion-icon>
+        </button>
+
+        <button ion-button icon-only class="wish-list-btn card" (click)="toggleWishList(item)" color="light">
+          <ion-icon name="share" color="gray"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <div text-center padding margin-top class="border-bottom">
+      <h2>{{selectProduct?.name}}</h2>
+        <p>{{ selectProduct?.short_description }}</p>
+        <h3 class="price" color="danger" margin-top>{{ selectProduct?.price | currency:'USD':true
+          }}</h3>       
+      </div>
+      <ion-row padding->
+        <ion-col>
+          <h4>
+              Quantity
+          </h4> 
+        </ion-col>
+        <ion-col class="qty" text-right>
+            <button (click)="decreaseProductCount()" ion-button small color="light">
+              -
+            </button>
+            <button ion-button small clear color="dark">
+              {{productCount}}
+            </button>
+            <button (click)="incrementProductCount()" ion-button small color="light">
+              +
+            </button>
+          </ion-col>
+      </ion-row>
+  </div>
+
+</ion-content>
+
+<ion-footer class="single-footer">
+    
+    <ion-grid>
+      <ion-row>
+         <ion-col class="addCart" (click)="addToCart(selectProduct)">
+           <button ion-button full color="secondary">
+             ADD TO CART
+           </button>          
+  
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+  </ion-footer>

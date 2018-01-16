@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -7,12 +7,28 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<ion-content>
+    <ion-slides *ngIf="promoImagesLoaded" autoplay=3000  slidesPerView=1>
+        <ion-slide *ngFor="let promo of promoSliders">
+            <img src="{{promo.name}}" alt="">
+          </ion-slide>  
+  
+    </ion-slides>
+      <ion-grid>
+          <ion-row *ngFor="let i of productRows">
+            <ion-col *ngFor="let product of products | slice:(i*2):(i+1)*2" width-50 (click)="showDetails(product)">
+              <ion-card>         
+                <img src="{{product.thumb}}" alt="">
+                <ion-card-content>
+                    <p>
+                        {{product.price | currency:'USD':true:'1.2-2'}}
+                    </p>
+                </ion-card-content>
+               </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  
 </ion-content>
+
+<!-- autoplay=6000 -->
