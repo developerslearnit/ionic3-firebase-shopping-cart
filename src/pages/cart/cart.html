@@ -1,18 +1,58 @@
-<!--
-  Generated template for the CartPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>cart</ion-title>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Your Cart
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <!-- <ion-list>
+    <ion-item *ngFor="let itm of  cartItems">
+      <ion-avatar item-start>
+        <img src="{{itm.thumb}}">
+      </ion-avatar>
+      <h2>{{itm.name}}</h2>
+      
+    </ion-item>
+  </ion-list> -->
 
+
+  <article class="product" *ngFor="let itm of  cartItems">
+    <header>
+      <a class="remove">
+        <img src="{{itm.thumb}}">
+      </a>
+    </header>
+
+    <div class="content">
+
+      <h1 text-right>{{itm.name}}</h1>
+    </div>
+
+    <footer class="content-foot">
+      <ion-row class="item-count">
+          <ion-col class="qty" text-right>
+              <button (click)="decreaseProductCount()" clear ion-button small color="dark">
+                -
+              </button>
+              <button ion-button small clear color="dark">
+                {{itm.count}}
+              </button>
+              <button (click)="incrementProductCount()" clear ion-button small color="dark">
+                +
+              </button>
+            </ion-col>
+            
+            <ion-col class="price">
+              {{itm.totalPrice | currency:'USD':true}}
+              </ion-col>
+      </ion-row>
+    </footer>
+  </article>
 </ion-content>

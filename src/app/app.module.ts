@@ -7,6 +7,7 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
+import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 import * as firebase from 'firebase';
 import { ProductsProvider } from '../providers/products/products';
 import { CategoryProvider } from '../providers/category/category';
@@ -35,6 +36,7 @@ firebase.initializeApp(config.firebasConfig);
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ProductsProvider,
     CategoryProvider,
+    NativePageTransitions,
     CartProvider
     
   ]

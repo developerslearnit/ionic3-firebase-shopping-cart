@@ -82,4 +82,6 @@
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.11" />
     <plugin name="cordova-sqlite-storage" spec="^2.2.0" />
+    <plugin name="com.telerik.plugins.nativepagetransitions" spec="^0.6.5" />
+    <engine name="android" spec="7.0.0" />
 </widget>
