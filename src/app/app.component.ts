@@ -48,7 +48,7 @@ export class MyApp {
   }
 
   goToCategory(category){
-    console.log("goToCategory",category);
+     this.nav.push('CategoryPage',{category:category})
   }
 
   getCategories(){

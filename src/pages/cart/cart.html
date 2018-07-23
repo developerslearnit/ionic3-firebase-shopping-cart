@@ -7,52 +7,65 @@
       Your Cart
     </ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
-<ion-content>
-  <!-- <ion-list>
-    <ion-item *ngFor="let itm of  cartItems">
-      <ion-avatar item-start>
-        <img src="{{itm.thumb}}">
-      </ion-avatar>
-      <h2>{{itm.name}}</h2>
-      
-    </ion-item>
-  </ion-list> -->
-
-
-  <article class="product" *ngFor="let itm of  cartItems">
-    <header>
-      <a class="remove">
-        <img src="{{itm.thumb}}">
-      </a>
-    </header>
-
-    <div class="content">
-
-      <h1 text-right>{{itm.name}}</h1>
+<ion-content padding>
+  <div *ngIf="isEmptyCart" class="empty-cart">
+    <div class="empty-results">
+      <h3 text-center>
+          <ion-icon name="cart"></ion-icon>
+      </h3>
+      <p text-center>
+        Your cart is empty
+      </p>
     </div>
+  </div>
+  <div *ngIf="!isEmptyCart" class="cart-itm-wrap">
 
-    <footer class="content-foot">
-      <ion-row class="item-count">
-          <ion-col class="qty" text-right>
-              <button (click)="decreaseProductCount()" clear ion-button small color="dark">
-                -
-              </button>
-              <button ion-button small clear color="dark">
-                {{itm.count}}
-              </button>
-              <button (click)="incrementProductCount()" clear ion-button small color="dark">
-                +
-              </button>
-            </ion-col>
-            
-            <ion-col class="price">
-              {{itm.totalPrice | currency:'USD':true}}
-              </ion-col>
-      </ion-row>
-    </footer>
-  </article>
+    <ion-card *ngFor="let itm of  cartItems">
+      <ion-card-content>
+        <ion-row>
+          <ion-col col-7>
+            <h3 style="margin: 7px" text-left>{{itm.name}}</h3>
+
+            <div class="itm-footer">
+              <span (click)="removeItem(itm)" class="remove">
+                Remove
+              </span>
+              <span class="price">
+                {{itm.totalPrice | currency:'USD':true}}
+              </span>
+            </div>
+
+
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-avatar>
+                <img style="float: right" src="{{itm.thumb}}">
+              </ion-avatar>
+            </ion-item>
+            <p style="color:#333" text-right>
+              Qty: {{itm.count}}
+            </p>
+          </ion-col>
+
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
+
+<ion-footer *ngIf="!isEmptyCart" class="single-footer">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="addCart" (click)="checkOut()">
+        <button round=true ion-button full color="secondary">
+          {{totalAmount | currency:'USD':true}} &nbsp; &nbsp; Checkout
+        </button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-footer>

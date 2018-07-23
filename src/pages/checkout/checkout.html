@@ -1,18 +1,100 @@
-<!--
-  Generated template for the CheckoutPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>checkout</ion-title>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Checkout
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
+<ion-content class="dark">
+  <ion-card>
+    <ion-card-header style="margin-bottom: 5px">
+      <ion-card-title>
+        Order Information
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <p style="margin-bottom: 10px">
+          Calculated below you'll find your order, taxes, discounts and other amounts included.
+        </p>
 
+        <ion-row>
+          <ion-col col-8>
+            <strong>
+              Subtotal
+            </strong>
+          </ion-col>
+          <ion-col col-4>
+            <span class="amt" text-right>
+              {{productAmt | currency:'USD':true}}
+            </span>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-8>
+            <strong>
+              Shipping
+            </strong>
+          </ion-col>
+          <ion-col col-4>
+            <span class="amt" text-right>
+              {{shippingFee | currency:'USD':true}}
+            </span>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </ion-card-content>
+    <div class="total-wrap">
+      <ion-row>
+        <ion-col col-8>
+          <strong>
+            Total
+          </strong>
+        </ion-col>
+        <ion-col col-4>
+          <span class="amt total" text-right>
+            {{totalAmount | currency:'USD':true}}
+          </span>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-card>
 
-<ion-content padding>
-
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Select Payment Method
+      </ion-card-title>
+    </ion-card-header>
+    <ion-list radio-group>
+      <ion-item>
+        <ion-label>
+          <div class="visa-card"></div>
+        </ion-label>
+        <ion-label>
+          <p text-center>{{customerName}}</p>
+          <p>**** **** **** 3489</p>
+        </ion-label>
+        <ion-radio color="primary" checked="true"></ion-radio>
+      </ion-item>
+       <ion-item>
+        <ion-label>
+          <div class="master-card"></div>
+        </ion-label>
+        <ion-label>
+          <p text-center>John Doe</p>
+          <p>**** **** **** 8950</p>
+        </ion-label>
+        <ion-radio color="primary"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card>
+    <button (click)="placeOrder()" block ion-button color="primary">
+Place Order
+    </button>
+  </ion-card>
 </ion-content>

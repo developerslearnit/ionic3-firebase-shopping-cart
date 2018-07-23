@@ -24,15 +24,7 @@ export class SinglePage {
     this.getSingleProduct();
   }
 
-  ionViewWillEnter() {
-
-    // this.getSingleProduct();
-  }
-
-  ionViewDidLeave() {
-    //window.localStorage.removeItem('selectedProduct');
-  }
-
+ 
   getSingleProduct() {
     if (window.localStorage.getItem('selectedProduct') != 'undefined') {
       this.selectProduct = JSON.parse(window.localStorage.getItem('selectedProduct'))

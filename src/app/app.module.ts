@@ -12,6 +12,9 @@ import * as firebase from 'firebase';
 import { ProductsProvider } from '../providers/products/products';
 import { CategoryProvider } from '../providers/category/category';
 import { CartProvider } from '../providers/cart/cart';
+import { AuthProvider } from '../providers/auth/auth';
+import { OrderProvider } from '../providers/order/order';
+
 
 firebase.initializeApp(config.firebasConfig);
 
@@ -29,6 +32,7 @@ firebase.initializeApp(config.firebasConfig);
   entryComponents: [
     MyApp,
     
+    
   ],
   providers: [
     StatusBar,
@@ -37,8 +41,9 @@ firebase.initializeApp(config.firebasConfig);
     ProductsProvider,
     CategoryProvider,
     NativePageTransitions,
-    CartProvider
-    
+    CartProvider,
+    AuthProvider,
+    OrderProvider    
   ]
 })
 export class AppModule {}

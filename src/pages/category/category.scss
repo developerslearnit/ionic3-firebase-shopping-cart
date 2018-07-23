@@ -1,3 +1,23 @@
 page-category {
 
+     
+     .scroll-content,
+     .fixed-content{
+
+     .grid{
+
+          .col{
+              padding:1px;
+              ion-card{                        
+                  border-radius: 0;
+                  width: 100%;
+                  margin: 1px;
+                  ion-card-content{
+                      padding: 1px 13px;
+                  }
+                  
+              }
+          }
+      }
+}
 }

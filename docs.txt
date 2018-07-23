@@ -1,5 +1,4 @@
 ionic cordova plugin add cordova-sqlite-storage --save
-
 npm install --save @ionic/storage
 
 

@@ -10,7 +10,7 @@
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
-      <h3 class="item menu-divider">Shop By Category</h3>
+      <h4 class="item menu-divider">Shop By Category</h4>
       <button menuClose ion-item *ngFor="let cat of categories" (click)="goToCategory(cat)">
         {{cat?.name}}
       </button>

@@ -7,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content  class="dark">
     <ion-slides *ngIf="promoImagesLoaded" autoplay=3000  slidesPerView=1>
         <ion-slide *ngFor="let promo of promoSliders">
             <img src="{{promo.name}}" alt="">

@@ -79,7 +79,7 @@ export class HomePage {
     this.productService.getProducts();
     this.events.subscribe('productsLoaded', () => {
       this.products = this.productService.products;
-      this.productRows = Array.from(Array(Math.ceil(this.products.length/2)).keys())
+      this.productRows = Array.from(Array(Math.ceil(this.products.length/2)).keys());
       
     })
   }
@@ -96,8 +96,7 @@ export class HomePage {
       fixedPixelsBottom: 60
      };
     this.nativePageTransitions.slide(options);
-    this.navCtrl.push("SinglePage",{product:product});
-    
+    this.navCtrl.push("SinglePage",{product:product});    
   }
 
 }

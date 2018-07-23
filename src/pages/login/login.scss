@@ -1,0 +1,47 @@
+page-login {
+     .scroll-content,
+     fixed-content {
+          
+         background: url(../assets/imgs/bg.png) no-repeat center center fixed;
+         -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+         background-size: cover;
+         
+         .top-page {
+              padding-top:30%;
+              padding-bottom: 20%;
+             height: 50%;
+             h2{
+                  
+                  img{
+                    max-width: 25% !important;                   
+                }
+             }
+         
+         }
+ 
+         .middle-page{
+           height: 60%;
+           padding: 5px 30px;
+           padding-top:5%;
+           ion-item{
+             background: none;
+             padding-left: 0 !important;
+             color: #fff !important;
+                // background-color: rgb(231, 230, 230) !important;
+                margin-bottom: 10px;
+                // border-radius: 10px;
+           }
+           button{
+                margin-top:2rem;
+                height: 3.7rem;
+                border-radius: 0;
+           }
+         }//end middle page
+ 
+         .bottom-page{
+           height: 7%;
+         }//End bottom page
+     }
+}

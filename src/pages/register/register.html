@@ -1,0 +1,38 @@
+
+<ion-content>
+    <ion-list>
+        <div class="top-page">
+          <h2  text-center>
+              <img src="assets/imgs/logo.png" alt="">
+          </h2>
+            
+        </div>
+        <div class="middle-page">
+          <ion-row>
+              <ion-col>
+              <h3 text-right class="text-white">Register</h3>
+              </ion-col>
+          </ion-row>
+          <ion-item class="username">
+              <ion-input type="text" [(ngModel)]="name"  placeholder="Full Name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="text" [(ngModel)]="address"  placeholder="Address"></ion-input>
+              </ion-item>
+            <ion-item>
+              <ion-input type="text" [(ngModel)]="email"  placeholder="Email Address"></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-input type="password" [(ngModel)]="password" placeholder="Password"></ion-input>
+            </ion-item>
+          
+          
+          
+            <button ion-button full (click)="register()"  color="primary">Register</button>  
+            <button ion-button clear class="text-white" (click)="showLoginPage()" style="float: right;margin-top: 0;text-align: right" href="#">Sign In</button>
+            
+        </div>
+      
+      </ion-list>
+</ion-content>

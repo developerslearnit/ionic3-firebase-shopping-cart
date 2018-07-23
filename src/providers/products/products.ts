@@ -30,6 +30,32 @@ export class ProductsProvider {
     });
   }
 
+
+  getProductByCategory(categoryId){
+    this.productRef.orderByChild('category_id').equalTo(categoryId).once('value',(snap)=>{
+      this.products = [];
+      if (snap.val()) {
+        var tempProducts = snap.val();
+        for (var key in tempProducts) {
+          let singleProduct = {
+            id:key,
+            category_id: tempProducts[key].category_id,
+            name: tempProducts[key].name,
+            images:tempProducts[key].images,
+            price:tempProducts[key].price,
+            rating:tempProducts[key].rating,
+            sale_price:tempProducts[key].sale_price,
+            short_description:tempProducts[key].short_description,
+            thumb:tempProducts[key].thumb
+          };
+
+          this.products.push(singleProduct);
+        }
+      }
+      this.events.publish('productsLoaded');
+    })
+  }
+
   getProducts() {
     this.productRef.once('value', (snap) => {
       this.products = [];

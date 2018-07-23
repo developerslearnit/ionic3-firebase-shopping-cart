@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the CategoryPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import { ProductsProvider } from '../../providers/products/products';
 
 @IonicPage()
 @Component({
@@ -14,12 +8,31 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'category.html',
 })
 export class CategoryPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  products: any[];
+  productRows:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private productService:ProductsProvider,private events: Events) {
+    
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CategoryPage');
+    this.loadProducts(this.navParams.get('category').id)
+  }
+
+
+
+  loadProducts(catId) {
+    this.productService.getProductByCategory(catId);
+    this.events.subscribe('productsLoaded', () => {
+      this.products = this.productService.products;
+      this.productRows = Array.from(Array(Math.ceil(this.products.length/2)).keys());
+    })
+  }
+
+
+  
+  showDetails(product){
+        this.navCtrl.push("SinglePage",{product:product});    
   }
 
 }
