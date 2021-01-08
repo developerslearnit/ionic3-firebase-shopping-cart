@@ -1,7 +1,7 @@
 # Ionic Firebase Shopping Cart
 This repository is part of an ionic tutorial that explains how to create ionic 3 ecommerce with firebase.
 
-## Donation [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/LukasReiner/) 
+## Donation [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VHVLNPVDHQ7DL) 
 If this project help you reduce time to develop, you can give me a cup of coffee (or a Beer of course) :)
 
 [![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VHVLNPVDHQ7DL) 
